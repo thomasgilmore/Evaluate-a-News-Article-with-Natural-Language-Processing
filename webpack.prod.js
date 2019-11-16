@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const dotenv = require('dotenv')
+const {defaults} = require('jest-config');
 
 module.exports = {
     entry: './src/client/index.js',
@@ -24,6 +25,7 @@ module.exports = {
             }
         ]
     },
+    moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts', 'tsx'],
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",
